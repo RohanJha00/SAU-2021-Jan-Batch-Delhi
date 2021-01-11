@@ -1,0 +1,107 @@
+1. Creating primary index on cricketDB
+query - CREATE PRIMARY INDEX ON `cricketDB` USING GSI;
+
+2. inserting documents in cricketDB
+queries:
+INSERT INTO cricketDB ( KEY, VALUE )
+VALUES
+("1",
+{ "playerName": "A", "matches": 12,"runs":452,"average":45.4});
+
+INSERT INTO cricketDB ( KEY, VALUE )
+VALUES
+("2",
+{ "playerName": "A", "matches": 57,"runs":1758,"average":43.26,"wickets":4});
+
+INSERT INTO cricketDB ( KEY, VALUE )
+VALUES
+("3",
+{ "playerName": "C", "matches":109,"runs":654,"average":18.42,"wickets":134});
+
+INSERT INTO cricketDB ( KEY, VALUE )
+VALUES
+("4",
+{ "playerName": "D", "matches":135,"runs":5645,"average":58.42});
+
+INSERT INTO cricketDB ( KEY, VALUE )
+VALUES
+("5",
+{ "playerName": "E", "matches":25,"runs":823,"average":39.67,"wickets":32});
+
+3. query - select * from cricketDB;
+result :
+[
+  {
+    "cricketDB": {
+      "average": 45.4,
+      "matches": 12,
+      "playerName": "A",
+      "runs": 452
+    }
+  },
+  {
+    "cricketDB": {
+      "average": 43.26,
+      "matches": 57,
+      "playerName": "A",
+      "runs": 1758,
+      "wickets": 4
+    }
+  },
+  {
+    "cricketDB": {
+      "average": 18.42,
+      "matches": 109,
+      "playerName": "C",
+      "runs": 654,
+      "wickets": 134
+    }
+  },
+  {
+    "cricketDB": {
+      "average": 58.42,
+      "matches": 135,
+      "playerName": "D",
+      "runs": 5645
+    }
+  },
+  {
+    "cricketDB": {
+      "average": 39.67,
+      "matches": 25,
+      "playerName": "E",
+      "runs": 823,
+      "wickets": 32
+    }
+  }
+]
+
+4. search query based on runs scored
+query - select * from cricketDB where runs>1000;
+result :
+[
+  {
+    "cricketDB": {
+      "average": 43.26,
+      "matches": 57,
+      "playerName": "A",
+      "runs": 1758,
+      "wickets": 4
+    }
+  },
+  {
+    "cricketDB": {
+      "average": 58.42,
+      "matches": 135,
+      "playerName": "D",
+      "runs": 5645
+    }
+  }
+]
+
+
+5. removing primary index
+query - 
+
+6. adding an index
+query - create INDEX idx_cbdemo2 on couchbasedemo(id,name);
