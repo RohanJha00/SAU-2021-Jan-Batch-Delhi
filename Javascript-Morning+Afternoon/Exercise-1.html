@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise-1</title>
+</head>
+<body>
+
+  <h1>Form Validation</h1>
+
+  <div class="form-container">
+
+    <form>
+      <input type="text" id="fname" placeholder="Enter FirstName"/><br>
+      <input type="text" id="sname" placeholder="Enter SecondName"><br>
+      <label >Gender:</label>
+          <select id="gender">
+              <option value=""></option>
+              <option value="male">male</option>
+              <option value="female">female</option>
+              <option value="other">other</option>
+          </select><br>
+      <input type="text" id="Email" placeholder="Enter Email id"><br>
+      <input type="text" id="contact" placeholder="Enter contact no"><br>
+      <input type="button" id="submit-btn" onclick="submitFn()" value="submit">
+    </form>
+
+  </div>
+
+</body>
+
+  <script>
+
+    var validEmail = (Email)=>{
+      if(!Email.includes("@")) return false;
+      return Email.includes(".com");
+    }
+
+    var validContact = (contact)=>{
+      if(contact.length!=10) return false;
+      for(let i=0;i<contact.length;i++){
+        if(contact[i]>='0' && contact[i]<='9') continue;
+        return false;
+      }
+      return true;
+    }
+
+    var submitFn = ()=>{
+      console.log('ok');
+      var fname = document.getElementById('fname').value;
+      var sname = document.getElementById('sname').value;
+      var gender = document.getElementById('gender').value;
+      var Email = document.getElementById('Email').value;
+      var contact = document.getElementById('contact').value;
+
+      if(fname===""){
+        alert('first name cannot be empty');
+        return;
+      }
+      if(sname===""){
+        alert('second name cannot be empty');
+        return;
+      }
+      if(gender===""){
+        alert('Please select any gender');
+        return;
+      }
+      if(Email===""){
+        alert('Email name cannot be empty');
+        return;
+      }
+      if(!validEmail(Email)){
+        alert('invalid Email');
+        return;
+      }
+      if(!validContact(contact)){
+        alert('incorrect contact no');
+        return;
+      }
+
+      var res = {
+        "First Name":fname,
+        "Second Name":sname,
+        "Gender":gender,
+        "Email":Email,
+        "Contact no":contact 
+      }
+
+      console.log(res);
+    }
+  </script>
+
+  <style>
+
+    h1{
+      margin-left: 400px;
+    }
+
+    .form-container{
+      margin-left: 300px;
+      margin-right: 400px;
+      padding:20px;
+      border:2px solid red;
+      border-radius: 10px;
+    }
+  </style>
+
+</html>

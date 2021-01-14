@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise-2</title>
+</head>
+<body>
+
+  <h1>HIGHLIGHT NUMS</h1>
+  
+  <div class="num-container">
+    <div id="1">1</div>
+    <div id="2">2</div>
+    <div id="3">3</div>
+    <div id="4">4</div>
+    <div id="5">5</div>
+    <div id="6">6</div>
+    <div id="7">7</div>
+    <div id="8">8</div>
+    <div id="9">9</div>
+    <div id="10">10</div>
+    <div id="11">11</div>
+    <div id="12">12</div>
+    <div id="13">13</div>
+    <div id="14">14</div>
+    <div id="15">15</div>
+    <div id="16">16</div>
+    <div id="17">17</div>
+    <div id="18">18</div>
+    <div id="19">19</div>
+    <div id="20">20</div><br><br>
+    
+    <button onclick="highlightEven()">Highlight-Even</button>
+    <button onclick="highlight5()">Highlight-5</button>
+    <button onclick="resetDivs()">Reset</button>
+  </div>
+
+</body>
+  <script>
+    var resetDivs=()=>{
+      for(let i=1;i<=20;i++){
+        document.getElementById(i.toString()).style.backgroundColor = 'white';
+      }
+    }
+
+    var highlightEven=()=>{
+      for(let i=2;i<=20;i+=2){
+        document.getElementById(i.toString()).style.backgroundColor = 'yellow';
+      }
+    }
+
+    var highlight5=()=>{
+      for(let i=5;i<=20;i+=5){
+        document.getElementById(i.toString()).style.backgroundColor = 'yellow';
+      }
+    }
+  </script>
+  <style>
+    h1{
+      margin-left: 400px;
+      font-family: sans-serif;
+    }
+
+    .num-container{
+      margin-left: 300px;
+      margin-right: 300px;
+      padding: 20px;
+      border: 2px solid red;
+      border-radius: 10px;
+    }
+  </style>
+</html>
