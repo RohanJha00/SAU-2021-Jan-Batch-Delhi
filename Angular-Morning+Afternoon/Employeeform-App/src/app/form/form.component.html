@@ -1,0 +1,12 @@
+<div style="background-color: #ffffff;">
+  <form [formGroup] = "userform" (ngSubmit)="onSubmit()">
+              <input type="text"  formControlName="Empid" placeholder="Employee id" required>
+              <input type="text" formControlName="Fname" placeholder="First Name" required>
+              <input type="text" formControlName="Lname" placeholder="Last Name" required>
+              <input type="number"  formControlName="age" min="0" max="100" placeholder="Age" required>
+              <input type="text" formControlName="city" placeholder="City" >
+
+        <button type="submit" [disabled]="!userform.valid">Save</button>
+  </form>
+  <button (click)="toggleinner()" class="danger">Close</button>
+</div>

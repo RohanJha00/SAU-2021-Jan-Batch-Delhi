@@ -1,0 +1,29 @@
+<h1>{{title}}</h1>
+
+  <button (click)="insert()">Add Employee</button>
+  <table  id="myTable">
+          <tr>
+            <th>E_ID</th>
+            <th>First_Name</th>
+            <th>Last_Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>&nbsp;</th>
+          </tr>
+
+        <tr *ngFor="let item of tabledata">
+            <td>{{ item.Empid }}</td>
+            <td>{{ item.Fname }}</td>
+            <td>{{ item.Lname }}</td>
+            <td>{{ item.age }}</td>
+            <td>{{ item.city }}</td>
+            <td>
+                  <button (click)="edit(item)">Edit</button>
+                  &nbsp;
+                  <button (click)="delete(item.Empid)" class="danger" >Delete</button>
+            </td>
+        </tr>
+  </table>
+  <app-form class="model" [hidden]="!displayForm" (ToggleEvent)="toggle($event)" (Emitevent)="emitdatahandler($event)"  >
+
+  </app-form>
