@@ -1,0 +1,15 @@
+.TodoContainer {
+  padding: 20px;
+}
+
+.Header {
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
+
+.TaskRow:hover .hidden {
+  display: inline-block;
+}
