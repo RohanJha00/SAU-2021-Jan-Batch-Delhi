@@ -6,7 +6,9 @@
 import { isReminderSelector } from '../../src/selectors/remSelector';
 import { useSubscription } from '../../src/utils/Helper';
 
+//remove imports which are not used in this file
 import { WatcherResult } from 'conduit-view';
+
 import { useEffect, useMemo, useRef, useState, useCallback } from 'react';
 
 import {
